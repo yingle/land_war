@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style>
+    </style>
+
+</head>
+
+<body style="background-color: floralwhite">
+    <div class="page-header">
+        <nav class="navbar navbar-default navbar-fixed-top" style="background-color: dodgerblue">
+            <h1 style="color: snow">Personal space    <span style="color: snow; font-size:small"><a style="color: snow" href="{% url 'logout_view' %}">Logout</a></span></h1>
+        </nav>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {% load staticfiles %}
+            <div class="col-md-3"></div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail" style="background-color: dodgerblue">
+                    <img src="{% static "gallery.png" %}" class="img-thumbnail" alt="My gallery" style="width:150px;height:150px">
+                </a>
+                <div class="caption">
+                    <h3>Gallery</h3>
+                    <p>See all photos uploaded by me</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="thumbnail" style="background-color: dodgerblue">
+                    <img src="{% static "statistics.png" %}" class="img-thumbnail" alt="My statistics" style="width:150px;height:150px">
+                </a>
+                <div class="caption">
+                    <h3>Statistic</h3>
+                    <p>See all statistic about my photos</p>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</body>
+
+<script>
+</script>
+
+</html>
