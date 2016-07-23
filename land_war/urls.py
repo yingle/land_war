@@ -13,6 +13,8 @@ urlpatterns = [
 
     url(r'^portal/$', include('portal.urls', namespace="portal")),
 
+    url(r'^registration/$', include('registration.urls', namespace="registration")),
+
     url(r'^logout/$', views.logout_view, name='logout_view'),
 
     url(r'^', include('django.contrib.auth.urls')),

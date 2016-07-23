@@ -15,7 +15,7 @@
 <body style="background-color: floralwhite">
 <div class="page-header">
     <nav class="navbar navbar-default navbar-fixed-top"  style="background-color: dodgerblue">
-      <h1 style="color: snow">Login   <span style="color: snow; font-size:small"><a style="color: snow" href="{% url 'registration:registration_view' %}">Are you a new user?</a></span></h1>
+      <h1 style="color: snow">Registration </h1>
     </nav>
 </div>
 
@@ -26,19 +26,11 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 {% if form.errors %}
-                <p>Your username and password didn't match, please try again.</p>
+                <p>Some error of input data, please try again.</p>
                 {% endif %}
                 <form method="post">
                     {% csrf_token %}
-                    <p>
-                        {{ form.username.label_tag }} {{ form.username }}
-                    </p>
-                    <p>
-                        {{ form.password.label_tag }} {{ form.password }}
-                    </p>
-                    {% if next %}
-                    <input type="hidden" name="next" value="{{ next }}" /> {% else %}
-                    <input type="hidden" name="next" value="/portal/" /> {% endif %}
+                    {{ form.as_p }}
                     <input type="submit" value="login" />
                 </form>
             </div>

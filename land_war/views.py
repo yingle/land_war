@@ -12,6 +12,3 @@ def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
 
-def registration_view(request):
-    #go to the registration page
-    return
