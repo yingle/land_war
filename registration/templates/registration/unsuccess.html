@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %} Unsuccess {% endblock %}
+{% block head %}
+    <script>
+    function redirect(){
+       window.location.href = "/registration";
+    }
+
+    setTimeout(redirect, 4000); //4000 is equivalent to 4 seconds
+    </script>
+{% endblock %}
+{% block body %}
+  <div>
+    <p style='color:#092E20;font-size:25px;font-weight:bold;padding-top:20px;padding-left:15px;'>
+         Incorrect input
+    </p>
+    <p>Redirecting to registration page.....</p>
+  </div>
+{% endblock %}
