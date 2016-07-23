@@ -53,6 +53,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+
+
 ROOT_URLCONF = 'land_war.urls'
 
 TEMPLATES = [
@@ -106,3 +108,6 @@ STATIC_URL = '/static/'
 
 #Login setting
 LOGIN_URL = '/login/'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

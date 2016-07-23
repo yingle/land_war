@@ -9,4 +9,6 @@ urlpatterns = [
 
     url(r'^losingest/$', views.losingest, name='losingest'),
 
+    url(r'^add/$', views.add_photo, name='add'),
+
 ]

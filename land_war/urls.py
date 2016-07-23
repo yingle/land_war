@@ -7,7 +7,7 @@ urlpatterns = [
     # Examples:
     # url(r'^$', 'landscape_war.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^photos/', include('photos.urls')),
+    url(r'^photos/', include('photos.urls', namespace="photos")),
 
     url(r'^$', views.main_page),
 
