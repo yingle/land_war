@@ -11,4 +11,6 @@ urlpatterns = [
 
     url(r'^add/$', views.add_photo, name='add'),
 
+    url(r'^all_photos/$', views.all_photos, name='all_photos'),
+
 ]
