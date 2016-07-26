@@ -21,9 +21,11 @@ def losingest(request):
 
 
 def all_photos(request):
-    current_user = request.user
-    all_photo_list = Photo.objects.get(createUser = current_user)
-    return render(request,'photos/all_photos.html', {list : all_photo_list})
+    current_user = request.user.id
+    all_photo_list = Photo.objects.filter(createUser_id = current_user)
+    #all_photo_list = Photo.objects.all()
+    return render(request,'photos/all_photos.html', {'list' : all_photo_list})
+
 
 
 
@@ -37,9 +39,9 @@ def add_photo(request):
             new_photo.kind = form.cleaned_data['kind']
             new_photo.city = form.cleaned_data['city']
             new_photo.description = form.cleaned_data['description']
-            new_photo.match_number = 50;
+            new_photo.match_number = 0
             new_photo.upload_data = datetime.now()
-            new_photo.votes = 0
+            new_photo.votes = 50
             new_photo.createUser = request.user
             new_photo.save()
             return render_to_response('portal/personal_space.html')
