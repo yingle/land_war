@@ -1,47 +1,44 @@
-<!DOCTYPE html>
-{% load staticfiles %}
+<!DOCTYPE html> {% load staticfiles %}
 <html>
-  <head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  </head>
+</head>
 
 <body style="background-color: floralwhite">
-<div class="page-header">
-    <nav class="navbar navbar-default navbar-fixed-top"  style="background-color: dodgerblue">
-      <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Daily Winner </h1>
-    </nav>
-</div>
-
-<section>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-                        <form action="{% url 'photos:daily_photo' %}" method="post">{% csrf_token %}
-                            <div class="row" >
-                          <label>Selezionare una data
-                            <input type="date" name="mydatetime" min="2016-07-20" />
-                          </label>
-                                </div>
-                          <div class="row" ><input type="submit" value="ConfirmDate" style="float: right" /></div>
-                        </form>
-                    </div>
-            <div class="col-md-4"></div>
-        </div>
+    <div class="page-header">
+        <nav class="navbar navbar-default navbar-fixed-top" style="background-color: dodgerblue">
+            <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Daily Winner </h1>
+        </nav>
     </div>
-</section>
 
-
-
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    {% if error_message %}
+                    <p><strong>{{ error_message }}</strong>
+                    </p>{% endif %}
+                    <form action="{% url 'photos:daily_photo' %}" method="post">{% csrf_token %}
+                        <div class="row">
+                            <label>Selezionare una data
+                                <input type="date" name="mydatetime" min="2016-07-20" />
+                            </label>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="ConfirmDate" style="float: right" />
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </section>
 </body>
 
-  <script>
-
-  </script>
 
 </html>

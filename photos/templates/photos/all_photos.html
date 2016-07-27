@@ -4,12 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <style>
-    </style>
-
 </head>
 
 <body style="background-color: floralwhite">
@@ -22,18 +17,16 @@
         <div class="panel-body">
             <div class="col-md-2"></div>
             <div class="col-md-10">
-            {% for item in list %}
-                <img src="{{ item.image.url }} " width="600" height="400">
+                {% for item in list %}
+                <a href="{% url 'photos:detail' item.id %}"><img src="{{ item.image.url }} " width="600" height="400" />
+                </a>
                 <p>{{ item.city }}</p>
                 <p>{{ item.description }}</p>
-            {% endfor %}
+                {% endfor %}
             </div>
             <div class="col-md-2"></div>
         </div>
     </div>
 </body>
-
-<script>
-</script>
 
 </html>

@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html>
-  <head>
- <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
- <style>
-
- </style>
-
-  </head>
+</head>
 
 <body style="background-color: floralwhite">
-<div class="page-header">
-    <nav class="navbar navbar-default navbar-fixed-top"  style="background-color: dodgerblue">
-      <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Add your photo </h1>
-    </nav>
-</div>
-
-<section>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            {% load staticfiles %}
-            <div class="col-md-4"></div>
-            <div class="col-md-4">
-                {% if form.errors %}
-                <p>Some error of input data, please try again.</p>
-                {% endif %}
-                <form enctype="multipart/form-data" method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <input type="submit" value="Upload" />
-                </form>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
+    <div class="page-header">
+        <nav class="navbar navbar-default navbar-fixed-top" style="background-color: dodgerblue">
+            <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Add your photo </h1>
+        </nav>
     </div>
-</section>
 
-
-
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                {% load staticfiles %}
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    {% if form.errors %}
+                    <p>Some error of input data, please try again.</p>
+                    {% endif %}
+                    <form enctype="multipart/form-data" method="post">
+                        {% csrf_token %} {{ form.as_p }}
+                        <input type="submit" value="Upload" />
+                    </form>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </section>
 </body>
 
-  <script>
 
-  </script>
 
 </html>
