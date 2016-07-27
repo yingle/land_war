@@ -15,7 +15,7 @@
 <body style="background-color: floralwhite">
     <div class="page-header">
         <nav class="navbar navbar-default navbar-fixed-top" style="background-color: dodgerblue">
-            <h1 style="color: snow">Personal space    <span style="color: snow; font-size:small"><a style="color: snow" href="{% url 'logout_view' %}">Logout</a></span></h1>
+            <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Personal space    <span style="color: snow; font-size:small"><a style="color: snow" href="{% url 'logout_view' %}">Logout</a></span></h1>
         </nav>
     </div>
     <div class="panel panel-default">
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <a href="#" class="thumbnail" style="background-color: dodgerblue">
+                <a href="{% url 'photos:statistic' %}" class="thumbnail" style="background-color: dodgerblue">
                     <img src="{% static "statistics.png" %}" class="img-thumbnail" alt="My statistics" style="width:150px;height:150px">
                 </a>
                 <div class="caption">

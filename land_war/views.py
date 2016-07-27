@@ -4,7 +4,7 @@ from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
 
 def main_page(request):
-    return render_to_response('main_page.html')
+    return HttpResponseRedirect('photos/')
 
 
 def logout_view(request):

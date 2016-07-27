@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ <style>
+
+ </style>
+
+  </head>
+
+<body style="background-color: floralwhite">
+<div class="page-header">
+    <nav class="navbar navbar-default navbar-fixed-top"  style="background-color: dodgerblue">
+      <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Detail </h1>
+    </nav>
+</div>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                {% if date %}<div class="row" style="font: bold 25px arial, sans-serif">Daily Photo of {{ date | date:"Y M d" }} </div>{% endif %}
+                <img src="{{ photo.image.url }} " width="600" height="400">
+                <div class="row" style="font: bold 15px arial, sans-serif">Positive votes percentual:  {{ photo.votes }} %</div>
+                <div class="row" style="font: bold 15px arial, sans-serif">Total match times: {{ photo.match_number }}</div>
+                <div class="row">Description:  {{ photo.description }}</div>
+                <div class="row">City:  {{ photo.city }}</div>
+                <div class="row">Upload date:  {{ photo.upload_date }}</div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+
+  <script>
+
+  </script>
+
+</html>

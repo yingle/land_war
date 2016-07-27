@@ -106,6 +106,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    "static/",
+    "photos/static",
+    "portal/static",
+]
+
 #Login setting
 LOGIN_URL = '/login/'
 

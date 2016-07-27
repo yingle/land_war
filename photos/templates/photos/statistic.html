@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+ <style>
+
+ </style>
+
+  </head>
+
+<body style="background-color: floralwhite">
+<div class="page-header">
+    <nav class="navbar navbar-default navbar-fixed-top"  style="background-color: dodgerblue">
+      <h1 style="color: snow"><a href="{% url 'photos:index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>  </a>Statistics </h1>
+    </nav>
+</div>
+
+<section>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <ul class="list-group">
+                  <li class="list-group-item">Mountain {{ perc_mountain }}% in all uploaded photos</li>
+                  <li class="list-group-item">Castel {{ perc_castel }}% in all uploaded photos</li>
+                  <li class="list-group-item">Beach {{ perc_beach }}% in all uploaded photos</li>
+                  <li class="list-group-item">{{ perc_winner }}% of daily winner in all uploaded photos </li>
+                  <li class="list-group-item">The most liked photo is: </li>
+                  <li class="list-group-item"><img src="{{ photo.image.url }} " width="600" height="400"></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+
+  <script>
+
+  </script>
+
+</html>

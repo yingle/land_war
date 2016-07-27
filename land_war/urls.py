@@ -11,7 +11,7 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
     url(r'^photos/', include('photos.urls', namespace="photos")),
 
-    url(r'^$', views.main_page),
+    url(r'^$', views.main_page, name='main_page'),
 
     url(r'^portal/$', include('portal.urls', namespace="portal")),
 

@@ -44,22 +44,23 @@
 </head>
 
 <body>
+    {% block body %}   {% load staticfiles %}
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Navbar-Brand</a>
+                <a class="navbar-brand" href="#">Land-war</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul id="navbar-selection" class="nav navbar-nav">
-                    <li><a href="#refresh">Refresh</a>
+                    <li><a href="{% url 'photos:index' %}">Refresh</a>
                     </li>
-                    <li><a href="#add">Add your photo</a>
+                    <li><a href="{% url 'photos:add' %}">Add your photo</a>
                     </li>
-                    <li><a href="#rank">Rank</a>
+                    <li><a href="{% url 'photos:rank' %}">Rank</a>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#space">Personal space</a>
+                    <li><a href="{% url 'portal:personal_space' %}">Personal space</a>
                     </li>
                 </ul>
             </div>
@@ -70,25 +71,30 @@
         <div class="row table-row">
             <div class="col-md-5">
                 <div class="img-vs">
-                    <div><img src="https://static.pexels.com/photos/108486/pexels-photo-108486.jpeg" class="img-thumbnail img-origin" width="600" height="400">
-                    </div>
-                    <span><img src ="https://blogs.warwick.ac.uk/images/amybaker/2005/09/16/sky_heart.jpg?maxWidth=800&maxHeight=600" class="img-thumbnail" width="600" height="400"></span>
-                    <!--<span class="glyphicons glyphicons-heart"></span>-->
+                    <a href="{% url 'photos:detail' first.id %}">
+                        <div><img src="{{ first.image.url }}" class="img-thumbnail img-origin" width="600" height="400">
+                        </div>
+                        <span><img src ="{% static "heart.jpg" %}" class="img-thumbnail" width="600" height="400" ></span>
+                        <!--<span class="glyphicons glyphicons-heart"></span>-->
+                    </a>
                 </div>
             </div>
             <div class="col-md-2" id="temi">
-                <h2> mountain </h2>
+                <h2> {{ first.kind }} </h2>
             </div>
             <div class="col-md-5">
                 <div class="img-vs">
-                    <div><img src="http://c.tadst.com/gfx/750w/int-mountain-day.jpg?1" class="img-thumbnail img-origin" width="600" height="400">
-                    </div>
-                    <span><img src ="https://blogs.warwick.ac.uk/images/amybaker/2005/09/16/sky_heart.jpg?maxWidth=800&maxHeight=600" class="img-thumbnail"  width="600" height="400"></span>
-                    <!--<span class="glyphicons glyphicons-heart"></span>-->
+                    <a href="{% url 'photos:detail' second.id %}">
+                        <div><img src="{{ second.image.url }}" class="img-thumbnail img-origin" width="600" height="400">
+                        </div>
+                        <span><img src ="{% static "heart.jpg" %}" class="img-thumbnail" width="600" height="400"></span>
+                        <!--<span class="glyphicons glyphicons-heart"></span>-->
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+    {% endblock %}
 </body>
 
 <script>

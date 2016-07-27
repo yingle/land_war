@@ -15,7 +15,7 @@ class Photo(models.Model):
     upload_date = models.DateTimeField('date of upload')
     description = models.CharField(max_length=300)
     match_number = models.IntegerField(default=0)
-    votes = models.IntegerField(default=50)
+    votes = models.FloatField(default=50.00)
     createUser = models.ForeignKey(User)
     city = models.CharField(max_length=30)
     image = models.ImageField(upload_to='dir_upload')
@@ -31,3 +31,11 @@ class Photo(models.Model):
     was_uploaded_recently.boolean = True
     was_uploaded_recently.short_description = 'Uploaded recently?'
 
+
+class DailyWinner(models.Model):
+    race_date = models.DateField()
+    #relazione manyToOne
+    winnerPhoto = models.ForeignKey(Photo, on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return self.race_date
